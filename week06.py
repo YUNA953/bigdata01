@@ -1,6 +1,7 @@
 drinks = ["아메리카노, 카페라떼"]
 prices = [1500, 2500]
 total_price=0
+anounts = [0,0]
 
 while True:
     menu = input(f"1) {drinks[0]} {prices[0]}원 2) {drinks[1]} {prices[1]}원 3)주문종료 :")
