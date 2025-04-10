@@ -10,7 +10,6 @@ elif menu=="2":
     print(f"{drinks[1]}를 주문하셨습니다 가격은 {prices[1]}입니다.")
 elif menu=="3":
     printf("주문을 종료합니다.")
-    break
 else:
     print(f"{menu}번 메뉴는 존재하지 않습니다.")
 
