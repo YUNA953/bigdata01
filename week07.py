@@ -47,4 +47,5 @@ while True:
     else:
         print(f"{menu}번 메뉴는 존재하지 않습니다.")
 
+print_receipt()
 
