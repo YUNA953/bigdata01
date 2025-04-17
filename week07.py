@@ -20,7 +20,6 @@ def display_menu() -> str:
     # for j in range(len(drinks)):
     #    menu_texts = menu_texts + f"{j+1}) {drinks[j]} {prices[j]}원 "
     # menu_texts = menu_texts + f"{len(drinks)+1} 주문종료 :"
-
     menu_texts = "".join([f"{j + 1}) {drinks[j]} {prices[j]}원 " for j in range(len(drinks))])
     menu_texts = menu_texts + f"{len(drinks) + 1}) 주문종료:"
 
@@ -34,18 +33,19 @@ def print_receipt() -> None:
     print(f"총 주문 금액 : {total_price}원")
 
 
-
-
-
 while True:
-    menu = int(input(display_menu()))
-    if len(drinks) >= menu >= 1:
-        order_process(int(menu) - 1)
-    elif menu == len(drinks) + 1:
-        print("주문종료")
-        break
-    else:
-        print(f"{menu}번 메뉴는 존재하지 않습니다.")
+    try:
+        menu = int(input(display_menu()))
+        if len(drinks) >= menu >= 1:
+            order_process(int(menu) - 1)
+        elif menu == len(drinks) + 1:
+            print("주문종료")
+            break
+        else:
+            print(f"{menu}번 메뉴는 존재하지 않습니다.")
+    except ValueError:
+        print(f"{menu}는 잘못된 입력입니다. 숫자를 입력해주세요.")
+
 
 print_receipt()
 
