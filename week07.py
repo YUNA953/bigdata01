@@ -1,4 +1,5 @@
-from week08 import *
+from week08 import drinks, display_menu, order_process, print_receipt
+
 
 while True:
     try:

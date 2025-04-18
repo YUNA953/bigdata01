@@ -32,3 +32,7 @@ def print_receipt() -> None:
             print(f"{drinks[i]:^20} {prices[i]:^6} {amounts[i]:^3} {prices[i] * amounts[i]:^6} ")
 
     print(f"총 주문 금액 : {total_price}원")
+
+
+def test() -> None:
+    pass
