@@ -1,17 +1,16 @@
 from week08 import *
+
 while True:
     try:
-        menu = int(input(isplay_menu()))
+        menu = int(input(display_menu()))
         if len(drinks) >= menu >= 1:
-            rder_process(int(menu) - 1)
-        elif menu == len(drinks) + 1:
-            print("주문종료")
+            order_process(menu - 1)
+        elif menu == len(drinks)+1:
+            print("주문을 종료합니다")
             break
         else:
-            print(f"{menu}번 메뉴는 존재하지 않습니다.")
+            print(f"{menu}번 메뉴는 존재하지 않습니다. 아래 메뉴에서 골라주세요")
     except ValueError:
-        print(f"{menu}는 잘못된 입력입니다. 숫자를 입력해주세요.")
-
+        print(f"문자를 입력할 수 없습니다. 숫자를 입력해주세요")
 
 print_receipt()
-
