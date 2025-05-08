@@ -18,6 +18,20 @@ def apply_discount(price: int)-> float:
         return price * DISCOUNT_RATE
     return price
 
+def get_ticket_number() -> int:
+    number = 0
+    try:
+        with open("ticket.txt","r") as fp:
+            number = number + int(fp.read())
+    except FileNotFoundError:
+        pass
+
+    number = number + 1
+
+    with open("ticket,txt","w") as pf:
+        fp.write(str(number))
+    return number
+
 def order_process(idx: int) -> None :
     global total_price
     print(f"{drinks[idx]}를 주문하셨습니다 가격은 {prices[idx]}입니다.")
