@@ -20,9 +20,12 @@ def apply_discount(price: int)-> float:
 
 def get_ticket_number() -> int:
     number = 0
+
+    number = number +1
     try:
         with open("ticket.txt","r") as fp:
-            number = number + int(fp.read())
+            fp.write(str(number))
+
     except FileNotFoundError:
         pass
 
