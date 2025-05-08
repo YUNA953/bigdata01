@@ -1,3 +1,5 @@
+from traceback import print_tb
+
 drinks = ["아메리카노", "카페라떼", "수박주스", "아인슈페너"]
 prices = [1500,2500,4000,8000]
 
@@ -8,9 +10,13 @@ prices = [1500,2500,4000,8000]
 #amounts = [0 for _ in range(len(drinks))]
 amounts = [0] * len(drinks)
 total_price=0
+DISCOUNT_THRESHOLD = 10000
+DISCOUNT_RATE = 0.1
 
 def apply_discount(price: int)-> float:
-    pass
+    if price >= DISCOUNT_THRESHOLD:
+        return price * DISCOUNT_RATE
+    return price
 
 def order_process(idx: int) -> None :
     global total_price
@@ -34,7 +40,15 @@ def print_receipt() -> None:
         if amounts[i] > 0:
             print(f"{drinks[i]:^20} {prices[i]:^6} {amounts[i]:^3} {prices[i] * amounts[i]:^6} ")
 
+    discounted_price = apply_discount(total_price)
+    discount = total_price - discounted_price
+
     print(f"총 주문 금액 : {total_price}원")
+    if discount > 0:
+        print(f"할인금액 : {discount}원")
+        print(f"할인 적용 후 지불하실 총 금액 : {discounted_price}원")
+    else:
+        print(f"할인이 적용되지 않았습니다. \n 지불하실 총 금액은 {total_price}원 입니다.")
 
 
 def test() -> None:
