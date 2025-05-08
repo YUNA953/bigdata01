@@ -1,12 +1,13 @@
 drinks = ["아메리카노", "카페라떼", "수박주스", "아인슈페너"]
 prices = [1500,2500,4000,8000]
-total_price=0
+
 #amounts = list()
 #for _ in range(len(drinks)):
 #    amounts.append(0)
 
 #amounts = [0 for _ in range(len(drinks))]
 amounts = [0] * len(drinks)
+total_price=0
 
 def apply_discount(price: int)-> float:
     pass
