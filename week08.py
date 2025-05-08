@@ -8,6 +8,8 @@ total_price=0
 #amounts = [0 for _ in range(len(drinks))]
 amounts = [0] * len(drinks)
 
+def apply_discount(price: int)-> float:
+    pass
 
 def order_process(idx: int) -> None :
     global total_price
