@@ -3,8 +3,6 @@ import sqlite3
 
 drinks = ["아이스 아메리카노", "카페 라떼", "수박 주스", "아인슈페너"]
 prices = [1500, 2500, 4000, 8000]
-# drinks = ["아이스 아메리카노"]
-# prices = [1500]
 amounts = [0] * len(drinks)
 total_price = 0
 
@@ -49,12 +47,7 @@ def print_ticket_number() -> None:
     """
     conn = sqlite3.connect('cafe.db')  # db instance open
     cur = conn.cursor()
-    cur.execute('''
-        create table if not exists ticket (
-        id integer primary key autoincrement,
-        number integer not null
-        )
-    ''')
+    cur.execute('''create table if not exists ticket (id integer primary key autoincrement,number integer not null)''')
 
     cur.execute('select number from ticket order by number desc limit 1')
     result = cur.fetchone()
