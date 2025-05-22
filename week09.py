@@ -1,3 +1,5 @@
+
+# dml insert -> update
 import week08 as kk
 
 if __name__ == "__main__":
